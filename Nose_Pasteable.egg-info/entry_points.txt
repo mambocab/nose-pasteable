@@ -1,3 +1,0 @@
-[nose.plugins]
-pasteable = pasteable.pasteable:Pasteable
-

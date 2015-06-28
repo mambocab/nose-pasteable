@@ -18,8 +18,9 @@ class Pasteable(Plugin):
         super(Pasteable, self).configure(parser, env)
 
         parser.set_defaults(pasteable=env.get(self.env_opt, False))
-        pasteable_help = ('Generate reports with test name specifiers that you '
-                          ' can paste back as nosetests input to rerun tests. '
+        pasteable_help = ('Generate reports with test name specifiers that '
+                          'you can paste back as nosetests input to rerun '
+                          'tests. '
                           '[{env_opt}]'.format(env_opt=self.env_opt))
         parser.add_option('--pasteable',
                           dest='pasteable',

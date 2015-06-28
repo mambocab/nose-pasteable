@@ -1,2 +1,1 @@
-nosetests test/easy_fail.py --with-pasteable
-
+./test_script.sh

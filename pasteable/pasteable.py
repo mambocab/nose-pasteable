@@ -38,7 +38,10 @@ class Pasteable(Plugin):
         self.enabled = options.pasteable
 
     def testName(self, test):
-        test_file_absolute_path, _, test_object = test.address()
+        try:
+            test_file_absolute_path, _, test_object = test.address()
+        except:
+            return
         test_file_relative_path = relpath(test_file_absolute_path, getcwd())
 
         return '{f}:{o}'.format(f=test_file_relative_path, o=test_object)

@@ -8,8 +8,6 @@ class Pasteable(Plugin):
     """
     Generates output about failing test cases in the same format as test
     specifiers for the nosetests command. In other words:
-
-    $ nosetests
     """
     enabled = False
     env_opt = 'NOSE_PASTEABLE'

@@ -38,8 +38,8 @@ class Pasteable(Plugin):
     def testName(self, test):
         try:
             test_file_absolute_path, _, test_object = test.address()
+            test_file_relative_path = relpath(test_file_absolute_path, getcwd())
+            return '{f}:{o}'.format(f=test_file_relative_path, o=test_object)
+        # except on everything so names operate normally if there are errors
         except:
             return
-        test_file_relative_path = relpath(test_file_absolute_path, getcwd())
-
-        return '{f}:{o}'.format(f=test_file_relative_path, o=test_object)

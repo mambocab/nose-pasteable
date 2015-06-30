@@ -39,3 +39,7 @@ function num_passed_tests() {
     [ `nosetests $test_name --verbosity=2 2>&1 | num_passed_tests` == 1 ]
   done
 }
+
+@test "nosetests doesn't fall over when given an incorrect test spec" {
+  [[ "`nosetests tests/test_file.py:NonExistentTestClass.nope_test 2>&1`" =~ "No module named" ]]
+}

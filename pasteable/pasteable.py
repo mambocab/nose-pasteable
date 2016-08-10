@@ -44,3 +44,6 @@ class Pasteable(Plugin):
         # except on everything so names operate normally if there are errors
         except:
             return
+
+    # work even when nose decides to use describeTest
+    describeTest = testName
